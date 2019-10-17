@@ -18,14 +18,17 @@
 
 import UIKit
 
+//main UI Controller class
 class ViewController: UIViewController {
 
     //UI elements declarations
+    //List name variables
     @IBOutlet weak var EditListName: UITextField!
     @IBOutlet weak var ListNameLabel: UILabel!
     
     @IBOutlet weak var EnterNewItem: UITextField!
     
+    //Item variables
     @IBOutlet weak var item1: UITextField!
     @IBOutlet weak var item2: UITextField!
     @IBOutlet weak var item3: UITextField!
@@ -34,6 +37,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var item6: UITextField!
     @IBOutlet weak var item7: UITextField!
     
+    //Quantity variables
     @IBOutlet weak var qty1: UILabel!
     @IBOutlet weak var qty2: UILabel!
     @IBOutlet weak var qty3: UILabel!
@@ -42,12 +46,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var qty6: UILabel!
     @IBOutlet weak var qty7: UILabel!
     
-    //variable to keep coiunt of the number of items already entered
+    //variable to keep count of the number of items already entered
     var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
     }
 
@@ -97,7 +100,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //steppers for each item
+    //steppers for each item: Stepper starts from value 0
     @IBAction func stp1(_ sender: UIStepper) {
         qty1.text=Int(sender.value).description
     }
