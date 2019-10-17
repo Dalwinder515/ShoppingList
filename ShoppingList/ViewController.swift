@@ -1,15 +1,26 @@
-//
-//  ViewController.swift
-//  ShoppingList
-//
-//  Created by Student on 2019-10-16.
-//  Copyright © 2019 CentennialCollege. All rights reserved.
-//
+/*
+ Test Submission for Midterm Test
+ File Name: ShoppingList.xcodeproj
+ Name: Dalwinder SIngh
+ ID: 301089722
+ Date: 16/10/2019
+ 
+ V1.1.5
+ Simple Shopping List App
+ - User can enter new items and corresponding quantity.
+ - Increment, decrement buttons have been added to increase or decrease the count.
+ - Cancel Button Clears everything
+ 
+ 2 UI designs have been provided in the attached pdf file.
+ 
+
+ */
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    //UI elements declarations
     @IBOutlet weak var EditListName: UITextField!
     @IBOutlet weak var ListNameLabel: UILabel!
     
@@ -31,6 +42,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var qty6: UILabel!
     @IBOutlet weak var qty7: UILabel!
     
+    //variable to keep coiunt of the number of items already entered
     var count = 0
     
     override func viewDidLoad() {
@@ -39,20 +51,22 @@ class ViewController: UIViewController {
         
     }
 
-    
+    //function invoked to change list name when EditListName is changed
     @IBAction func ListNameChanged(_ sender: UITextField) {
         
         ListNameLabel.text=EditListName.text
     }
     
+    //function to add new item
     @IBAction func AddItemButton(_ sender: UIButton) {
         
+        //if user has entered valid values
         if(!(EnterNewItem.text!.isEmpty))
         {
+            //then update corresponding item
             if(count == 0)
             {
                 item1.text=EnterNewItem.text
-                
             }
             else if(count == 1)
             {
@@ -78,11 +92,12 @@ class ViewController: UIViewController {
             {
                 item7.text=EnterNewItem.text
             }
+            //increment item count
             count+=1
         }
     }
     
-    
+    //steppers for each item
     @IBAction func stp1(_ sender: UIStepper) {
         qty1.text=Int(sender.value).description
     }
@@ -105,10 +120,11 @@ class ViewController: UIViewController {
         qty7.text=Int(sender.value).description
     }
     
-
+    //save button, currently not fucntional
     @IBAction func SaveButton(_ sender: UIButton) {
     }
     
+    //Cancel button fucntion, clears everything
     @IBAction func CancelButton(_ sender: UIButton) {
         
         item1.text=""
