@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var ListNameLabel: UILabel!
     
     @IBOutlet weak var EnterNewItem: UITextField!
-    @IBOutlet weak var EnterQuantity: UITextField!
     
     @IBOutlet weak var item1: UITextField!
     @IBOutlet weak var item2: UITextField!
@@ -34,12 +33,13 @@ class ViewController: UIViewController {
     
     var count = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
+
+    
     @IBAction func ListNameChanged(_ sender: UITextField) {
         
         ListNameLabel.text=EditListName.text
@@ -47,42 +47,36 @@ class ViewController: UIViewController {
     
     @IBAction func AddItemButton(_ sender: UIButton) {
         
-        if(!(EnterNewItem.text!.isEmpty||EnterQuantity.text!.isEmpty))
+        if(!(EnterNewItem.text!.isEmpty))
         {
             if(count == 0)
             {
                 item1.text=EnterNewItem.text
-                qty1.text=EnterQuantity.text
+                
             }
             else if(count == 1)
             {
                 item2.text=EnterNewItem.text
-                qty2.text=EnterQuantity.text
             }
             else if(count == 2)
             {
                 item3.text=EnterNewItem.text
-                qty3.text=EnterQuantity.text
             }
             if(count == 3)
             {
                 item4.text=EnterNewItem.text
-                qty4.text=EnterQuantity.text
             }
             if(count == 4)
             {
                 item5.text=EnterNewItem.text
-                qty5.text=EnterQuantity.text
             }
             if(count == 5)
             {
                 item6.text=EnterNewItem.text
-                qty6.text=EnterQuantity.text
             }
             if(count == 6)
             {
                 item7.text=EnterNewItem.text
-                qty7.text=EnterQuantity.text
             }
             count+=1
         }
@@ -132,6 +126,7 @@ class ViewController: UIViewController {
         qty6.text="0"
         qty7.text="0"
         ListNameLabel.text="Shopping List"
+        count=0
     }
     
 }
